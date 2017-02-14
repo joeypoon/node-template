@@ -1,0 +1,23 @@
+{
+  "name": "node-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "build": "babel server.js --out-dir dist"
+  },
+  "author": "Joey F. Poon",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.23.0",
+    "babel-core": "6.23.1",
+    "babel-preset-es2015": "6.22.0"
+  },
+  "dependencies": {
+    "body-parser": "1.16.1",
+    "es6-promise": "4.0.5",
+    "express": "4.14.1",
+    "isomorphic-fetch": "2.2.1"
+  }
+}
