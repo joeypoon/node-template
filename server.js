@@ -7,13 +7,13 @@ const app = express();
 
 const router = express.Router();
 const root = {
-    bundle(req, res) {
-        res.sendFile(path.join(__dirname + '/bundle.js'));
-    }
+  bundle(req, res) {
+    res.sendFile(path.join(__dirname + '/bundle.js'));
+  }
 };
 
 router.use((req, res, next) => {
-    next();
+  next();
 });
 
 router.route('/bundle').get(root.bundle);
@@ -24,11 +24,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api', router);
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'));
 });
 
-const port = 9006;
+const port = 9000;
 app.listen(port);
 
 console.log(`Listening on port ${ port }`);
